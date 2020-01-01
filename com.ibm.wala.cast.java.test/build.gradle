@@ -1,11 +1,12 @@
 plugins {
 	id 'eclipse'
+	id 'java-test-fixtures'
 }
 
 eclipse.project.natures 'org.eclipse.pde.PluginNature'
 
 dependencies {
-	implementation(
+	testFixturesImplementation(
 			'junit:junit:4.12',
 			project(':com.ibm.wala.cast'),
 			project(':com.ibm.wala.cast.java'),
