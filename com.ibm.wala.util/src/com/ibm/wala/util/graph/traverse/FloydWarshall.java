@@ -90,7 +90,7 @@ public class FloydWarshall<T> {
   }
 
   public static <T> GetPath<T> allPairsShortestPath(final NumberedGraph<T> G) {
-    return new FloydWarshall<T>(G) {
+    return new FloydWarshall<>(G) {
       int[][] next = new int[G.getNumberOfNodes()][G.getNumberOfNodes()];
 
       @Override
@@ -104,7 +104,7 @@ public class FloydWarshall<T> {
         }
 
         final int[][] paths = allPairsShortestPaths();
-        return new GetPath<T>() {
+        return new GetPath<>() {
 
           @Override
           public String toString() {
@@ -146,7 +146,7 @@ public class FloydWarshall<T> {
   }
 
   public static <T> GetPaths<T> allPairsShortestPaths(final NumberedGraph<T> G) {
-    return new FloydWarshall<T>(G) {
+    return new FloydWarshall<>(G) {
       MutableIntSet[][] next = new MutableIntSet[G.getNumberOfNodes()][G.getNumberOfNodes()];
 
       @Override
@@ -159,7 +159,7 @@ public class FloydWarshall<T> {
 
       private GetPaths<T> doit() {
         final int[][] paths = allPairsShortestPaths();
-        return new GetPaths<T>() {
+        return new GetPaths<>() {
 
           @Override
           public String toString() {

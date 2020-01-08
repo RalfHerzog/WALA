@@ -175,7 +175,7 @@ public class FlowGraph implements Iterable<Vertex> {
   public PointerAnalysis<ObjectVertex> getPointerAnalysis(
       final CallGraph cg, final IAnalysisCacheView cache, final IProgressMonitor monitor)
       throws CancelException {
-    return new PointerAnalysis<ObjectVertex>() {
+    return new PointerAnalysis<>() {
 
       private final Map<Pair<PrototypeField, ObjectVertex>, PrototypeFieldVertex> proto =
           HashMapFactory.make();
@@ -185,7 +185,7 @@ public class FlowGraph implements Iterable<Vertex> {
 
       private final ExtensionGraph<Vertex> dataflow = new ExtensionGraph<>(graph);
 
-      protected IR getIR(final IAnalysisCacheView cache, FuncVertex func) {
+      private IR getIR(final IAnalysisCacheView cache, FuncVertex func) {
         return cache.getIR(func.getConcreteType().getMethod(AstMethodReference.fnSelector));
       }
 

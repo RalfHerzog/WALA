@@ -73,14 +73,14 @@ public class DelegatingNumberedNodeManager<T extends INodeWithNumber>
   @Override
   public Iterator<T> iterator() {
     final INodeWithNumber[] arr = nodes;
-    return new Iterator<T>() {
+    return new Iterator<>() {
       int nextCounter = -1;
 
       {
         advance();
       }
 
-      void advance() {
+      private void advance() {
         for (int i = nextCounter + 1; i < arr.length; i++) {
           if (arr[i] != null) {
             nextCounter = i;

@@ -100,7 +100,7 @@ public class SparseVector<T> implements IVector<T>, Serializable {
    */
   @Override
   public Iterator<T> iterator() {
-    return new Iterator<T>() {
+    return new Iterator<>() {
 
       int i = 0;
 

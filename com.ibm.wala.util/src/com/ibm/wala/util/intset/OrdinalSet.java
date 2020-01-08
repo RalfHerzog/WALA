@@ -60,7 +60,7 @@ public class OrdinalSet<T> implements Iterable<T> {
       return EmptyIterator.instance();
     } else {
 
-      return new Iterator<T>() {
+      return new Iterator<>() {
         IntIterator it = S.intIterator();
 
         @Override

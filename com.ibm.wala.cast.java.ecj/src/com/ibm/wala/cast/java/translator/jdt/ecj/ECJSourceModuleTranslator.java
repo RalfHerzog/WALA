@@ -202,7 +202,7 @@ public class ECJSourceModuleTranslator implements SourceModuleTranslator {
 
   protected JDTJava2CAstTranslator<Position> makeCAstTranslator(
       CompilationUnit cu, String fullPath) {
-    return new JDTJava2CAstTranslator<Position>(sourceLoader, cu, fullPath, false, dump) {
+    return new JDTJava2CAstTranslator<>(sourceLoader, cu, fullPath, false, dump) {
       @Override
       public Position makePosition(int start, int end) {
         return new AbstractSourcePosition() {

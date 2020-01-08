@@ -242,7 +242,7 @@ public class CrossLanguageClassHierarchy implements IClassHierarchy {
 
   @Override
   public Iterator<IClass> iterator() {
-    return new ComposedIterator<ClassLoaderReference, IClass>(
+    return new ComposedIterator<>(
         analysisScope.getLoaders().iterator()) {
       @Override
       public Iterator<IClass> makeInner(ClassLoaderReference o) {

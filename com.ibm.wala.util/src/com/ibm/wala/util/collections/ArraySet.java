@@ -50,7 +50,7 @@ import java.util.NoSuchElementException;
 public class ArraySet<T> extends AbstractSet<T> {
 
   private static final ArraySet<?> EMPTY =
-      new ArraySet<Object>(0, true) {
+      new ArraySet<>(0, true) {
         @Override
         /*
          * @throws UnsupportedOperationException unconditionally

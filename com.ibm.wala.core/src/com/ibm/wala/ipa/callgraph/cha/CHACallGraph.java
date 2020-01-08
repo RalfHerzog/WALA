@@ -281,7 +281,7 @@ public class CHACallGraph extends BasicCallGraph<CHAContextInterpreter> {
 
   @Override
   protected NumberedEdgeManager<CGNode> getEdgeManager() {
-    return new NumberedEdgeManager<CGNode>() {
+    return new NumberedEdgeManager<>() {
       private final Map<CGNode, SoftReference<Set<CGNode>>> predecessors = HashMapFactory.make();
 
       private Set<CGNode> getPreds(CGNode n) {

@@ -491,7 +491,7 @@ public class PropagationGraph implements IFixedPointSystem<PointsToSetVariable> 
     @Override
     public Iterator<PointsToSetVariable> getPredNodes(PointsToSetVariable v) {
       final Iterator<AbstractStatement<PointsToSetVariable, ?>> eqs = getStatementsThatDef(v);
-      return new Iterator<PointsToSetVariable>() {
+      return new Iterator<>() {
         Iterator<INodeWithNumber> inner;
 
         @Override
@@ -549,7 +549,7 @@ public class PropagationGraph implements IFixedPointSystem<PointsToSetVariable> 
     @Override
     public Iterator<PointsToSetVariable> getSuccNodes(PointsToSetVariable v) {
       final Iterator<AbstractStatement> eqs = getStatementsThatUse(v);
-      return new Iterator<PointsToSetVariable>() {
+      return new Iterator<>() {
         PointsToSetVariable nextResult;
 
         {
@@ -916,7 +916,7 @@ public class PropagationGraph implements IFixedPointSystem<PointsToSetVariable> 
     @Override
     public Iterator<PointsToSetVariable> getPredNodes(PointsToSetVariable v) {
       final Iterator<AbstractStatement<PointsToSetVariable, ?>> eqs = getStatementsThatDef(v);
-      return new Iterator<PointsToSetVariable>() {
+      return new Iterator<>() {
         PointsToSetVariable nextResult;
 
         {
@@ -972,7 +972,7 @@ public class PropagationGraph implements IFixedPointSystem<PointsToSetVariable> 
     @Override
     public Iterator<PointsToSetVariable> getSuccNodes(PointsToSetVariable v) {
       final Iterator<AbstractStatement> eqs = getStatementsThatUse(v);
-      return new Iterator<PointsToSetVariable>() {
+      return new Iterator<>() {
         PointsToSetVariable nextResult;
 
         {
