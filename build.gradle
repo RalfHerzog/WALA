@@ -5,6 +5,9 @@
 
 buildscript {
 	dependencies.classpath 'commons-io:commons-io:2.8.0'
+	dependencies {
+		classpath 'com.bmuschko:gradle-nexus-plugin:2.3'
+	}
 }
 
 plugins {
@@ -15,6 +18,8 @@ plugins {
 	id 'de.undercouch.download'
 //	id 'nebula.lint' version '14.2.5'
 }
+
+apply plugin: 'com.bmuschko.nexus'
 
 repositories {
 	// to get the google-java-format jar and dependencies
@@ -261,7 +266,7 @@ tasks.register('installGitHooks', Copy) {
 }
 
 // run all known linters
-final check = tasks.register('check') {
+final check = tasks.register('walaCheck') {
 	group = 'verification'
 	dependsOn(
 			// 'lintGradle',
@@ -274,7 +279,7 @@ final check = tasks.register('check') {
 	}
 }
 
-tasks.register('build') {
+tasks.register('walaBuild') {
 	dependsOn check
 }
 
